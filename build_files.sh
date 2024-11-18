@@ -3,6 +3,8 @@
 echo "Building project requirements..."
 
 python3 -m pip install -r requirements.txt
+python3 -m pip install sqlite-devel
+python3 -m pip install libsqlite3-dev
 
 echo "Migrating Database..."
 
