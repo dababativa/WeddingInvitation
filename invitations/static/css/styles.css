@@ -1,0 +1,8 @@
+body {
+    background-color: #DEDAD5 !important;
+    /* background-image: url("../images/bg.jpg") !important; */
+}
+
+img[src$=".svg"] {
+    width: 50px !important;
+}

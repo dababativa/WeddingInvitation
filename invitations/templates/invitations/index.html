@@ -1,0 +1,59 @@
+{% extends 'invitations/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container text-center">
+    <div class="row mb-3">
+        <div class="col-md-3"></div>
+        <div class="col-12 col-md-6">
+
+            <!-- <h1>¡Nos casamos!</h1>
+            <h4>21-03-2025</h4>
+            <h4>Bogotá D.C.</h4> -->
+            <img src="{% static 'images/banner.jpeg' %}" alt="Wedding" width="100%">
+
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <h1>21</h1>
+                        <h1>03</h1>
+                        <h1>25</h1>
+                    </div>
+                    <div class="col-10 d-flex align-items-center">
+                        <p style="text-align: end" class="align-middle">
+                            <span class="d-md">Estamos muy emocionados de poder
+                                compartir
+                                este día tan importante
+                                con ustedes.</span>
+                            Los invitamos a celebrar con nosotros en la hacienda Le Jardin a las 4:00PM.
+                            Su presencia es muy importante para nosotros.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-12 col-md-4">
+            <form action="{% url 'process_invitation_code' %}" method="post">
+                {% csrf_token %}
+                <fieldset>
+                    <label for="invitation_code" class="mb-2">Por favor ingresa el código de tu invitación</label><br>
+                    <input type="text" name="invitation_code" id="invitation_code" required>
+
+                </fieldset>
+                <input type="submit" value="Ingresar" class="btn">
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+{% endblock %}
