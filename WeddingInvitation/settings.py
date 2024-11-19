@@ -16,7 +16,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATIC_ROOT = os.path.join(BASE_DIR, "invitations/static")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -27,7 +26,7 @@ SECRET_KEY = "django-insecure-22zhwu!p(h5v#c%h8kp%o52&u*$ook6_4#q9%rj19dhla5cwf=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "babativa.pythonanywhere.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "babativa.pythonanywhere.com"]
 
 
 # Application definition
@@ -137,6 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "invitations/static")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "images/static")]
 
 # Default primary key field type

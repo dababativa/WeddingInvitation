@@ -1,8 +1,66 @@
 body {
-    background-color: #DEDAD5 !important;
-    /* background-image: url("../images/bg.jpg") !important; */
+    background-color: #FFFFFF !important;
+}
+
+.custom-section-titles {
+    color: #995E3F !important;
+}
+
+.custom-button-color {
+    background-color: #D8B4A0 !important;
+    color: white !important;
+    border-color: #D8B4A0 !important;
 }
 
 img[src$=".svg"] {
     width: 50px !important;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+    background-color: #D8B4A0 !important;
+    border-color: #D8B4A0 !important;
+    font-family: "Cinzel", serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+
+.btn-primary:hover {
+    background-color: #C9967B !important;
+    border-color: #C9967B !important;
+    font-family: "Cinzel", serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+
+/* Cursiva */
+.pinyon-script-regular {
+    font-family: "Pinyon Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Mayus */
+.cinzel-regular {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Regular */
+.cormorant-garamond-regular {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-style: normal;
 }

@@ -16,15 +16,15 @@
         <div class="col-12 col-md-6 text-center">
 
 
-            <h1>Laura & Daniel</h1>
+            <h1 class="custom-section-titles pinyon-script-regular">Laura & Daniel</h1>
             <img src="{% static 'images/porto2.jpeg' %}" alt="" width="100%">
-            <h1>{{ invitation.name }}</h1>
+            <h1 class="custom-section-titles pinyon-script-regular">{{ invitation.name }}</h1>
             <p>{{ invitation.message }}</p>
             {% if not invitation.is_honorary_invitation %}
             <p>Cupos: {{ invitation.amount }}</p>
 
             <img src="{% static 'images/church.svg' %}" alt="Iglesia">
-            <h1>Ceremonia & Recepción</h1>
+            <h1 class="custom-section-titles cinzel-regular">Ceremonia & Recepción</h1>
             <p>
                 Hacienda Le Jardin
             </p>
@@ -34,8 +34,9 @@
             <p>
                 Recepción: 6:00PM
             </p>
-            <button onclick="window.open('https://www.google.com', '_blank')" class="btn btn-primary">Mapa</button>
-            <h1>Dressing Code</h1>
+            <button onclick="window.open('https://www.google.com', '_blank')"
+                class="btn btn-primary cinzel-regular">MAPA</button>
+            <h1 class="custom-section-titles cinzel-regular">Código de Vestimenta</h1>
             <p>Etiqueta rigurosa</p>
             <div class="row">
                 <div class="col-6">
@@ -50,29 +51,29 @@
                     <p>Traje negro tipo esmoquin con corbatín</p>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row"> -->
 
-                <button onclick="window.open('https://pin.it/444uqMSpT', '_blank')"
-                    class="btn btn-primary">Ejemplos</button>
-            </div>
-            <h1>Regalos</h1>
+            <button onclick="window.open('https://pin.it/444uqMSpT', '_blank')"
+                class="btn btn-primary">EJEMPLOS</button>
+            <!-- </div> -->
+            <h1 class="custom-section-titles cinzel-regular">Regalos</h1>
             <p>Tu presencia en este día tan especial para nosotros es tu mejor regalo. Sin embargo, si quieres
                 obsequiarnos algo más estaremos recibiendo regalos en forma de lluvia de sobres</p>
             <img src="{% static 'images/envelope.svg' %}" alt="Regalos">
             <legend>
-                <h1>Confirma tu asistencia</h1>
+                <form action="{% url 'confirm_invitation' invitation.id %}" method="post">
+                    <h1 class="custom-section-titles cinzel-regular">Confirma tu asistencia</h1>
             </legend>
-            <form action="{% url 'confirm_invitation' invitation.id %}" method="post">
-                {% csrf_token %}
-                <fieldset>
+            {% csrf_token %}
+            <fieldset>
 
-                    <input type="checkbox" name="will_attend" id="will_attend">
-                    <label for="will_attend">Ire a la boda</label><br>
-                    <input type="text" name="food_restrictions" id="food_restrictions">
-                    <label for="food_restrictions">Restricciones alimenticias</label><br>
+                <input type="checkbox" name="will_attend" id="will_attend">
+                <label for="will_attend">Ire a la boda</label><br>
+                <label for="food_restrictions">Restricciones alimenticias</label><br>
+                <input type="text-area" name="food_restrictions" id="food_restrictions">
 
-                </fieldset>
-                <input type="submit" value="Confirmation">
+            </fieldset>
+            <input type="submit" value="Confirmation">
             </form>
             {% else %}
             {% endif %}
