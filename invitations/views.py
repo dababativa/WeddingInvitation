@@ -5,7 +5,7 @@ from django.views import generic
 # Create your views here.
 from django.http import HttpResponse
 from .models import Invitation, Confirmation
-from django.views.decorators.csrf import csrf_protect, csrf_exempt
+from django.views.decorators.csrf import csrf_exempt
 
 
 def parse_checkbox(value: str) -> bool:
@@ -44,7 +44,7 @@ def confirm_invitation(request, invitation_id: int) -> HttpResponse:
     confirmation = Confirmation.objects.create(
         will_attend=parse_checkbox(body.get("will_attend", "off")),
         food_restrictions=body.get("food_restrictions", ""),
-        amount=int(body.get("amount", 0)),
+        amount=body.get("amount", 0) if body.get("amount") else 0,
     )
     invitation = Invitation.objects.get(id=invitation_id)
     invitation.confirmation = confirmation

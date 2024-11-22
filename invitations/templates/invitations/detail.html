@@ -6,7 +6,7 @@
 <div class="container">
     <h1 class="custom-section-titles pinyon-script-regular mt-3 mb-3 text-center">Laura & Daniel</h1>
     {% if invitation %}
-    {% if invitation.expired %}
+    {% if invitation.expired and not invitation.confirmation %}
     <h1 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Invitación Expirada</h1>
     <h2 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Parece que has ingresado una
         invitación
@@ -69,11 +69,11 @@
                     <input class="cormorant-garamond-regular mb-3" type="checkbox" name="will_attend" id="will_attend">
                     <br>
                     <label class="cormorant-garamond-regular mb-1" for="amount">Cupos confirmados</label> <br>
-                    <input required class="cormorant-garamond-regular mb-3" type="number" name="amount" id="amount"
-                        min="0" max="{{ invitation.amount }}"> <br>
+                    <input class="cormorant-garamond-regular mb-3" type="number" name="amount" id="amount" min="0"
+                        max="{{ invitation.amount }}"> <br>
                     <label class="cormorant-garamond-regular mb-1" for="food_restrictions">Restricciones
                         alimenticias</label><br>
-                    <textarea required class="cormorant-garamond-regular mb-3" type="text-area" name="food_restrictions"
+                    <textarea class="cormorant-garamond-regular mb-3" type="text-area" name="food_restrictions"
                         id="food_restrictions"></textarea>
 
                 </fieldset>
