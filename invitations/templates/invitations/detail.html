@@ -9,9 +9,10 @@
     {% if invitation.expired and not invitation.confirmation %}
     <h1 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Invitación Expirada</h1>
     <h2 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Parece que has ingresado una
-        invitación
-        expirada
-    </h2>
+        invitación expirada</h2>
+    <span class=" d-flex justify-content-center">
+        <a href="{% url 'index' %}" class="btn btn-primary">REGRESAR</a>
+    </span>
     {% else %}
     <div class="row">
         <div class="col-md-3"></div>
@@ -92,6 +93,9 @@
     <h2 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Parece que has ingresado una
         invitación inválida
     </h2>
+    <span class=" d-flex justify-content-center">
+        <a href="{% url 'index' %}" class="btn btn-primary">REGRESAR</a>
+    </span>
     {% endif %}
 </div>
 {% endblock %}
