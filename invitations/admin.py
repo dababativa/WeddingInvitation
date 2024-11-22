@@ -5,18 +5,20 @@ from import_export.admin import ImportExportModelAdmin
 from import_export import resources, fields
 from import_export.widgets import ForeignKeyWidget
 from .models import Confirmation, Invitation
+
 # Register your models here.
+
 
 class ConfirmationResource(resources.ModelResource):
     guest = fields.Field(
-        column_name='guest',
-        attribute='invitation__name',
+        column_name="guest",
+        attribute="invitation__name",
     )
 
     class Meta:
         model = Confirmation
-        fields = ('id', 'guest', 'will_attend', 'food_restrictions')
-        export_order = ('id', 'guest', 'will_attend', 'food_restrictions')
+        fields = ("id", "guest", "will_attend", "amount", "food_restrictions")
+        export_order = ("id", "guest", "will_attend", "amount", "food_restrictions")
 
 
 class InvitationAdmin(ImportExportModelAdmin):

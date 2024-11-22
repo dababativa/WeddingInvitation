@@ -4,26 +4,25 @@
 
 {% block content %}
 <div class="container">
+    <h1 class="custom-section-titles pinyon-script-regular mt-3 mb-3 text-center">Laura & Daniel</h1>
     {% if invitation %}
     {% if invitation.expired %}
-    <h1>Parece que has ingresado una invitación expirada</h1>
-    <img src="https://media.istockphoto.com/id/94740594/es/foto/intrigado.jpg?s=2048x2048&w=is&k=20&c=8DYa-bI0deU4AAAXk-ZX1UBdEVHrwtL59K7zSb0WX1A="
-        alt="Perrito confundido" size="100px">
+    <h1 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Invitación Expirada</h1>
+    <h2 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Parece que has ingresado una
+        invitación
+        expirada
+    </h2>
     {% else %}
-    {{ invitation.is_honorary_invitation }}
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-12 col-md-6 text-center">
-
-
-            <h1 class="custom-section-titles pinyon-script-regular">Laura & Daniel</h1>
-            <img src="{% static 'images/porto2.jpeg' %}" alt="" width="100%">
+            <img src="{% static 'images/porto2.jpeg' %}" class="mb-3" alt="" width="100%">
             <h1 class="custom-section-titles pinyon-script-regular">{{ invitation.name }}</h1>
             <p>{{ invitation.message }}</p>
             {% if not invitation.is_honorary_invitation %}
-            <p>Cupos: {{ invitation.amount }}</p>
+            <p class="mb-4">Cupos: {{ invitation.amount }}</p>
 
-            <img src="{% static 'images/church.svg' %}" alt="Iglesia">
+            <img src="{% static 'images/church.svg' %}" class="mb-1" alt="Iglesia">
             <h1 class="custom-section-titles cinzel-regular">Ceremonia & Recepción</h1>
             <p>
                 Hacienda Le Jardin
@@ -34,8 +33,8 @@
             <p>
                 Recepción: 6:00PM
             </p>
-            <button onclick="window.open('https://www.google.com', '_blank')"
-                class="btn btn-primary cinzel-regular">MAPA</button>
+            <button onclick="window.open('https://maps.app.goo.gl/y1N4tdG2Thfxq1h86', '_blank')"
+                class="btn btn-primary cinzel-regular mb-4">MAPA</button>
             <h1 class="custom-section-titles cinzel-regular">Código de Vestimenta</h1>
             <p>Etiqueta rigurosa</p>
             <div class="row">
@@ -51,40 +50,48 @@
                     <p>Traje negro tipo esmoquin con corbatín</p>
                 </div>
             </div>
-            <!-- <div class="row"> -->
-
             <button onclick="window.open('https://pin.it/444uqMSpT', '_blank')"
-                class="btn btn-primary">EJEMPLOS</button>
-            <!-- </div> -->
+                class="btn btn-primary mb-5 mt-3">EJEMPLOS</button>
             <h1 class="custom-section-titles cinzel-regular">Regalos</h1>
             <p>Tu presencia en este día tan especial para nosotros es tu mejor regalo. Sin embargo, si quieres
                 obsequiarnos algo más estaremos recibiendo regalos en forma de lluvia de sobres</p>
-            <img src="{% static 'images/envelope.svg' %}" alt="Regalos">
-            <legend>
-                <form action="{% url 'confirm_invitation' invitation.id %}" method="post">
-                    <h1 class="custom-section-titles cinzel-regular">Confirma tu asistencia</h1>
-            </legend>
-            {% csrf_token %}
-            <fieldset>
-
-                <input type="checkbox" name="will_attend" id="will_attend">
-                <label for="will_attend">Ire a la boda</label><br>
-                <label for="food_restrictions">Restricciones alimenticias</label><br>
-                <input type="text-area" name="food_restrictions" id="food_restrictions">
-
-            </fieldset>
-            <input type="submit" value="Confirmation">
-            </form>
+            <img src="{% static 'images/envelope.svg' %}" alt="Regalos" class="mb-5">
+            <h1 class="custom-section-titles cinzel-regular mt-1 mb-2">Confirma tu asistencia</h1>
+            {% if invitation.confirmation %}
+            <p class="mt-4 mb-5 pb-5 bb-5">Ya enviaste una respuesta. Gracias por confirmar tu asistencia.</p>
             {% else %}
+            <form action="{% url 'confirm_invitation' invitation.id %}" method="post">
+
+                {% csrf_token %}
+                <fieldset>
+
+                    <label class="cormorant-garamond-regular mb-1" for="will_attend">Ire a la boda</label><br>
+                    <input class="cormorant-garamond-regular mb-3" type="checkbox" name="will_attend" id="will_attend">
+                    <br>
+                    <label class="cormorant-garamond-regular mb-1" for="amount">Cupos confirmados</label> <br>
+                    <input required class="cormorant-garamond-regular mb-3" type="number" name="amount" id="amount"
+                        min="0" max="{{ invitation.amount }}"> <br>
+                    <label class="cormorant-garamond-regular mb-1" for="food_restrictions">Restricciones
+                        alimenticias</label><br>
+                    <textarea required class="cormorant-garamond-regular mb-3" type="text-area" name="food_restrictions"
+                        id="food_restrictions"></textarea>
+
+                </fieldset>
+                <input type="submit" value="Confirmar" class="btn btn-primary mb-5 mt-2">
+            </form>
+            {% endif %}
+            {% else %}
+            <p></p>
             {% endif %}
         </div>
         <div class="col-md-3"></div>
     </div>
     {% endif %}
     {% else %}
-    <h1>Parece que has ingresado una invitación inválida</h1>
-    <img src="https://media.istockphoto.com/id/94740594/es/foto/intrigado.jpg?s=2048x2048&w=is&k=20&c=8DYa-bI0deU4AAAXk-ZX1UBdEVHrwtL59K7zSb0WX1A="
-        alt="Perrito confundido" size="100px">
+    <h1 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Invitación Inválida</h1>
+    <h2 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Parece que has ingresado una
+        invitación inválida
+    </h2>
     {% endif %}
 </div>
 {% endblock %}

@@ -14,5 +14,10 @@ urlpatterns = [
         views.confirm_invitation,
         name="confirm_invitation",
     ),
+    path(
+        "<str:invitation_code>/confirmation",
+        views.confirmation,
+        name="confirmation",
+    ),
     path("<str:code>/", views.DetailView.as_view(), name="invitation_detail"),
 ]

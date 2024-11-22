@@ -5,7 +5,7 @@ from django.views import generic
 # Create your views here.
 from django.http import HttpResponse
 from .models import Invitation, Confirmation
-from django.template import loader
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 
 
 def parse_checkbox(value: str) -> bool:
@@ -16,9 +16,11 @@ def index(request):
     return render(request, "invitations/index.html")
 
 
+@csrf_exempt
 def process_invitation_code(request):
     if request.method == "POST":
         invitation_code = request.POST.get("invitation_code")
+        print("helo")
         return redirect(reverse("invitation_detail", args=[invitation_code]))
     return redirect(reverse("index"))
 
@@ -31,7 +33,6 @@ class DetailView(generic.DetailView):
 
     def get_object(self, queryset=None):
         code = self.kwargs.get("code")
-        print(code)
         try:
             return Invitation.objects.get(code=code)
         except Exception:
@@ -40,9 +41,18 @@ class DetailView(generic.DetailView):
 
 def confirm_invitation(request, invitation_id: int) -> HttpResponse:
     body: dict = request.POST
-    Confirmation.objects.create(
+    confirmation = Confirmation.objects.create(
         will_attend=parse_checkbox(body.get("will_attend", "off")),
         food_restrictions=body.get("food_restrictions", ""),
-        invitation_id=invitation_id,
+        amount=int(body.get("amount", 0)),
     )
-    return HttpResponse(f"You're looking at confirmation {invitation_id}.")
+    invitation = Invitation.objects.get(id=invitation_id)
+    invitation.confirmation = confirmation
+    invitation.save()
+    return redirect(reverse("confirmation", args=[invitation.code]))
+
+
+def confirmation(request, invitation_code: str):
+    return render(
+        request, "invitations/confirmation.html", {"invitation_code": invitation_code}
+    )

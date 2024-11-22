@@ -12,10 +12,15 @@ class Invitation(models.Model):
     expiration_date = models.DateField(verbose_name="Fecha de expiración")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Creado el")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Actualizado el")
-    last_modified_by = models.CharField(
-        max_length=100, verbose_name="Último modificado por"
-    )
     is_honorary_invitation = models.BooleanField("Invitación honorífica", default=False)
+    confirmation = models.OneToOneField(
+        "Confirmation",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        verbose_name="Confirmación",
+        related_name="invitation",
+    )
 
     def expired(self) -> bool:
         return self.expiration_date < date.today()
@@ -25,11 +30,8 @@ class Invitation(models.Model):
 
 
 class Confirmation(models.Model):
-    invitation = models.ForeignKey(Invitation, on_delete=models.CASCADE)
     will_attend = models.BooleanField(verbose_name="Asistirá")
+    amount = models.IntegerField(verbose_name="Cantidad de asistentes")
     food_restrictions = models.TextField(verbose_name="Restricciones alimenticias")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Creado el")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Actualizado el")
-    last_modified_by = models.CharField(
-        max_length=100, verbose_name="Último modificado por"
-    )

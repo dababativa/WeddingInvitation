@@ -1,0 +1,13 @@
+{% extends 'invitations/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1 class="custom-section-titles pinyon-script-regular mt-3 mb-3 text-center">Laura & Daniel</h1>
+    <h2 class="custom-section-titles cormorant-garamond-regular text-center">¡Gracias por confirmar tu asistencia!</h2>
+    <span class=" d-flex justify-content-center">
+        <a href="{% url 'invitation_detail' invitation_code %}" class="btn btn-primary">REGRESAR</a>
+    </span>
+</div>
+{% endblock %}

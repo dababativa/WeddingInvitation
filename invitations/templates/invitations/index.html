@@ -15,9 +15,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-2">
-                        <h1 class="custom-section-titles">21</h1>
-                        <h1 class="custom-section-titles">03</h1>
-                        <h1 class="custom-section-titles">25</h1>
+                        <h1 class="custom-section-titles pinyon-script-regular">21</h1>
+                        <h1 class="custom-section-titles pinyon-script-regular">03</h1>
+                        <h1 class="custom-section-titles pinyon-script-regular">25</h1>
                     </div>
                     <div class="col-10 d-flex align-items-center">
                         <p style="text-align: end" class="align-middle">
@@ -34,15 +34,15 @@
         </div>
         <div class="col-md-3"></div>
     </div>
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-md-4"></div>
         <div class="col-12 col-md-4">
             <form action="{% url 'process_invitation_code' %}" method="post">
                 {% csrf_token %}
                 <fieldset>
-                    <label for="invitation_code" class="mb-2">Por favor ingresa el código de tu invitación</label><br>
-                    <input type="text" name="invitation_code" id="invitation_code" required>
-
+                    <label for="invitation_code" class="mb-2 cormorant-garamond-regular">Por favor ingresa el código de
+                        tu invitación</label><br>
+                    <input class="mb-4" type="text" name="invitation_code" id="invitation_code" required>
                 </fieldset>
                 <input type="submit" value="Ingresar" class="btn btn-primary custom-button-color">
             </form>

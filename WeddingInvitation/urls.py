@@ -21,6 +21,10 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     path("", lambda request: redirect("invitations/", permanent=True)),
-    path("invitations/", include("invitations.urls"), name="invitations"),
+    path(
+        "invitations/",
+        include("invitations.urls"),
+        name="invitations",
+    ),
     path("admin/", admin.site.urls),
 ]
