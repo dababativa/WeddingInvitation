@@ -3,13 +3,18 @@ body {
 }
 
 .custom-section-titles {
-    color: #7272a6 !important;
+    color: black !important;
+    font-weight: 600;
 }
 
 .custom-button-color {
     background-color: #fff3eb !important;
     color: white !important;
     border-color: #fff3eb !important;
+}
+
+.banner {
+    font-weight: 600 !important;
 }
 
 img[src$=".svg"] {
@@ -31,8 +36,8 @@ img[src$=".svg"] {
 }
 
 .btn-primary:hover {
-    background-color: #393953 !important;
-    border-color: #393953 !important;
+    background-color: #ccc2bc !important;
+    border-color: #ccc2bc !important;
     font-family: "Cinzel", serif !important;
     font-optical-sizing: auto !important;
     font-weight: 400 !important;

@@ -17,56 +17,65 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-12 col-md-6 text-center">
-            <img src="{% static 'images/detail.jpeg' %}" class="mb-3" alt="" width="100%">
-            <h1 class="custom-section-titles pinyon-script-regular">{{ invitation.name }}</h1>
-            <p>{{ invitation.message }}</p>
+            <img src="{% static 'images/detail.jpeg' %}" class="mb-3 " alt="foto pareja" width="100%">
+            <h2 class="custom-section-titles pinyon-script-regular mt-3 mb-3">{{ invitation.name }}</h2>
+            <p>{{ invitation.message | safe }}</p>
             {% if not invitation.is_honorary_invitation %}
-            <p class="mb-4">Cupos: {{ invitation.amount }}</p>
+            <p class="mb-5">Cupos: {{ invitation.amount }}</p>
 
-            <img src="{% static 'images/church.svg' %}" class="mb-1" alt="Iglesia">
+            <img src="{% static 'images/church.svg' %}" class="mb-1 mt-1" alt="Iglesia">
             <h1 class="custom-section-titles cinzel-regular">Ceremonia & Recepción</h1>
             <p>
                 Hacienda Le Jardin
             </p>
             <p>
-                Ceremonia: 4:00PM
+                Ceremonia: 3:00PM
             </p>
             <p>
                 Recepción: 6:00PM
             </p>
             <button onclick="window.open('https://maps.app.goo.gl/y1N4tdG2Thfxq1h86', '_blank')"
-                class="btn btn-primary cinzel-regular mb-4">MAPA</button>
-            <h1 class="custom-section-titles cinzel-regular">Código de Vestimenta</h1>
-            <p>Etiqueta rigurosa</p>
+                class="btn btn-primary cinzel-regular mb-5">MAPA</button>
+            <h1 class="custom-section-titles cinzel-regular mt-1">Código de Vestimenta</h1>
+            <h5 class="cinzel-regular mb-3 mt-1">Etiqueta rigurosa</h5>
             <div class="row">
                 <div class="col-6">
-                    <img src="{% static 'images/dress.svg' %}" alt="Vestido">
+                    <img src="{% static 'images/dress.svg' %}" alt="Vestido" height="70px">
                     <p>Ellas</p>
                     <p>Vestido largo de <strong>un solo</strong> tono</p>
 
                 </div>
                 <div class="col-6">
-                    <img src="{% static 'images/tuxedo.svg' %}" alt="Traje">
+                    <img src="{% static 'images/tuxedo.svg' %}" alt="Traje" height="75px">
                     <p>Ellos</p>
-                    <p>Traje negro tipo esmoquin con corbatín</p>
+                    <p>Traje negro <strong>tipo esmoquin</strong> con corbatín</p>
                 </div>
             </div>
+
             <button onclick="window.open('https://pin.it/444uqMSpT', '_blank')"
-                class="btn btn-primary mb-5 mt-3">EJEMPLOS</button>
-            <h1 class="custom-section-titles cinzel-regular">Regalos</h1>
-            <p>Tu presencia en este día tan especial para nosotros es tu mejor regalo. Sin embargo, si quieres
-                obsequiarnos algo más estaremos recibiendo regalos en forma de lluvia de sobres</p>
+                class="btn btn-primary mb-3 mt-3">EJEMPLOS</button>
+            <div class="mb-5">
+                <h5 class="custom-section-titles cinzel-regular mt-1 mb-3">Reserva de Colores</h5>
+                <img src="{% static 'images/color.png' %}" width="70%">
+                <p class="mt-1" width="70%">Colores no permitidos para los vestidos de las mujeres.</p>
+            </div>
+            <h1 class="custom-section-titles cinzel-regular mt-1">Regalos</h1>
+            <p>Tu presencia en este día tan especial para nosotros es el mejor regalo. Sin embargo, si quieres
+                obsequiarnos algo más, estaremos recibiendo regalos en forma de lluvia de sobres</p>
             <img src="{% static 'images/envelope.svg' %}" alt="Regalos" class="mb-5">
             <h1 class="custom-section-titles cinzel-regular mt-1 mb-2">Confirma tu asistencia</h1>
             {% if invitation.confirmation %}
-            <p class="mt-4 mb-5 pb-5 bb-5">Ya enviaste una respuesta. Gracias por confirmar tu asistencia.</p>
+            <p class="mt-4">Ya enviaste una respuesta. Gracias por confirmar tu asistencia.</p>
+            <span class=" d-flex justify-content-center  mb-5 pb-5 bb-5">
+                <a href="{% url 'index' %}" class="btn btn-primary">REGRESAR</a>
+            </span>
             {% else %}
             <form action="{% url 'confirm_invitation' invitation.id %}" method="post">
 
                 {% csrf_token %}
                 <fieldset>
 
-                    <label class="cormorant-garamond-regular mb-1" for="will_attend">Ire a la boda</label><br>
+                    <label class="cormorant-garamond-regular mb-1" for="will_attend">Asistiré a la boda</label><br>
                     <input class="cormorant-garamond-regular mb-3" type="checkbox" name="will_attend" id="will_attend">
                     <br>
                     <label class="cormorant-garamond-regular mb-1" for="amount">Cupos confirmados</label> <br>
@@ -82,7 +91,9 @@
             </form>
             {% endif %}
             {% else %}
-            <p></p>
+            <span class=" d-flex justify-content-center">
+                <a href="{% url 'index' %}" class="btn btn-primary">REGRESAR</a>
+            </span>
             {% endif %}
         </div>
         <div class="col-md-3"></div>
