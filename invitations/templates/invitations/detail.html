@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container">
-    <h1 class="custom-section-titles pinyon-script-regular mt-3 mb-3 text-center">Laura & Daniel</h1>
+    <h1 class="custom-section-titles pinyon-script-regular mt-3 mb-3 text-center banner-title">Laura & Daniel</h1>
     {% if invitation %}
     {% if invitation.expired and not invitation.confirmation %}
     <h1 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Invitación Expirada</h1>
@@ -18,13 +18,16 @@
         <div class="col-md-3"></div>
         <div class="col-12 col-md-6 text-center">
             <img src="{% static 'images/detail.jpeg' %}" class="mb-3 " alt="foto pareja" width="100%">
-            <h2 class="custom-section-titles pinyon-script-regular mt-3 mb-3">{{ invitation.name }}</h2>
+            <h2 class="custom-section-titles pinyon-script-regular mt-3 mb-3 guest-name">{{ invitation.name }}</h2>
             <p>{{ invitation.message | safe }}</p>
             {% if not invitation.is_honorary_invitation %}
-            <p class="mb-5">Cupos: {{ invitation.amount }}</p>
+            <p class="mb-5"><strong>Cupos: {{ invitation.amount }}</strong></p>
 
             <img src="{% static 'images/church.svg' %}" class="mb-1 mt-1" alt="Iglesia">
             <h1 class="custom-section-titles cinzel-regular">Ceremonia & Recepción</h1>
+            <p>
+                Viernes 21 de Marzo de 2025
+            </p>
             <p>
                 Hacienda Le Jardin
             </p>
@@ -40,7 +43,7 @@
             <h5 class="cinzel-regular mb-3 mt-1">Etiqueta rigurosa</h5>
             <div class="row">
                 <div class="col-6">
-                    <img src="{% static 'images/dress.svg' %}" alt="Vestido" height="70px">
+                    <img src="{% static 'images/formaldress.svg' %}" alt="Vestido" height="70px">
                     <p>Ellas</p>
                     <p>Vestido largo de <strong>un solo</strong> tono</p>
 

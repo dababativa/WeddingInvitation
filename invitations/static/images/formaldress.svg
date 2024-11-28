@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg4657" viewBox="0 0 744.09 1052.4" version="1.1">
+  <defs id="defs4659">
+    <linearGradient id="linearGradient11432" y2="211.53" gradientUnits="userSpaceOnUse" x2="483.97" gradientTransform="translate(.057031 -.66480)" y1="212.24" x1="253.93">
+      <stop id="stop11413" stop-color="#00045c" offset="0"/>
+      <stop id="stop11415" stop-color="#b2b6ff" offset=".4851"/>
+      <stop id="stop11417" stop-color="#00045c" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient11434" y2="177.38" gradientUnits="userSpaceOnUse" x2="417.14" y1="177.38" x1="314.65">
+      <stop id="stop3471" stop-color="#535353" offset="0"/>
+      <stop id="stop3477" stop-color="#fff" offset=".48987"/>
+      <stop id="stop3473" stop-color="#535353" offset="1"/>
+    </linearGradient>
+  </defs>
+  <g id="layer1">
+    <g id="g12218">
+      <g id="g11425" transform="matrix(1.0826 0 0 1.0826 -32.24 -43.14)">
+        <path id="path2930-1-74-4-2-8-7" fill="#e9c6af" d="m375.05 502.87l0.27 360.72c63.74 41.2 64.6 89.33 91.51 100.47l-29.39-0.01c-9.19-26.08-47.67-77.81-62.41-79.85l0.02 61.91-20.75 0.01v-61.9c-14.74 1.99-53.2 54.35-53.81 79.83h-29.04c23.75-11.01 19.9-60.06 82.85-100.49v-360.61l-1.01-373.74c-14.06-10.6-8.29-33.241 11.24-33.216 18.91 0.145 23.42 22.616 10.52 33.176v373.7z"/>
+        <path id="path2940-7-0-0-2-6-1" fill="#e9c6af" d="m288.67 481.97c133.15-0.38 42.8-0.38 151.77 0 6.86-59.17-1.87-101.63-30.18-170.39 23.83-72.38 29.56-109.24 21.61-137.33-1.28-3.79-14.56-6.41-28.28-7.62-6.04-0.53-12.16-0.79-17.37-0.75-6.81 0.05 1.96-21.88-7.12-21.85-13.85 0.06-17.76 0.16-27.72 0.13-11.53-0.03-0.47 21.19-7.55 21.59-24.75 1.4-42.2 2.08-43.65 8.27-7.12 29.53-3.47 65.18 20.2 137.56-23.62 54.83-36.12 111.16-31.71 170.39z"/>
+        <path id="path2940-7-0-0-2-1-6-8-1" d="m206.93 957.67c22.21-5.58 34.67-19.84 45.1-0.47 29.42 54.6 72.91-260.83 80.93-294.99 1.52-6.5 0.65-6.53 1.32-0.05 0.54 38.53 50.22 266.56 79.84 299.52 14.57 16.21 59.1-49.49 104.66-4.01-31.09-75.04-105.05-264.8-73.72-402.43 11.51-50.56 3.86-160.95-32.76-238.72 9.43-26.47 14.77-56.78 24.73-71.63 6.4-9.55 12.89-20.68 8.2-44.86-7.57-27.13 0.08-21.13-46.98 15.29-63.49 44.21-1.17 44.21-64.79-0.24-48.87-38.78-41.7-35.53-44.91-15.37-5.34 17.65 1.81 34.36 8.08 44.35 9.75 15.52 10.58 43.74 21.22 73.49-35.22 80.44-40.44 185.76-30.84 236.75 32.76 136.07-42.61 330.36-80.08 403.37z" fill="#00045c"/>
+        <path id="rect3408" d="m288.69 174.13c57.18 31.72 93.69 32.46 155.13 3.07 5.11 22.22 11.19 44.48 0 61.39-62.85 18.63-99.6 18.72-155.13-1.73-10.87-14.05-5.9-41.73 0-62.73z" fill="url(#linearGradient11432)"/>
+        <path id="rect3446" d="m342.36 165.83c17.85 18.3 29.96 17.88 45.37 0.05h1.06l1.31 0.01 2.12 0.06 1.28 0.04 1.96 0.08 2.45 0.14 1.84 0.11c-14.5 29.73-51.66 30.51-69.35 0.2l11.96-0.69z" fill="url(#linearGradient11434)"/>
+      </g>
+    </g>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>formal navy dress</dc:title>
+        <dc:date>2011-07-29T07:50:17</dc:date>
+        <dc:description>navy dress with slit</dc:description>
+        <dc:source>http://openclipart.org/detail/152263/formal-navy-dress-by-artmaker</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Artmaker</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>design</rdf:li>
+            <rdf:li>dress</rdf:li>
+            <rdf:li>fancy</rdf:li>
+            <rdf:li>formal</rdf:li>
+            <rdf:li>gown</rdf:li>
+            <rdf:li>long</rdf:li>
+            <rdf:li>mannequin</rdf:li>
+            <rdf:li>navy</rdf:li>
+            <rdf:li>necklace</rdf:li>
+            <rdf:li>outfit</rdf:li>
+            <rdf:li>shop</rdf:li>
+            <rdf:li>silver</rdf:li>
+            <rdf:li>slit</rdf:li>
+            <rdf:li>style</rdf:li>
+            <rdf:li>women</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

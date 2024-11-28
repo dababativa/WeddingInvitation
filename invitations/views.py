@@ -20,7 +20,7 @@ def index(request):
 def process_invitation_code(request):
     if request.method == "POST":
         invitation_code = request.POST.get("invitation_code")
-        print("helo")
+        invitation_code = invitation_code.strip()
         return redirect(reverse("invitation_detail", args=[invitation_code]))
     return redirect(reverse("index"))
 
