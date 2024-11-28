@@ -43,6 +43,7 @@ class ExpiredFilter(admin.SimpleListFilter):
 class InvitationAdmin(ImportExportModelAdmin):
     model = Invitation
     list_display = ["name", "amount", "code", "expired", "expiration_date"]
+    readonly_fields = ["code"]
     search_fields = ["name", "code"]
     list_filter = ["is_honorary_invitation", ExpiredFilter]
 
