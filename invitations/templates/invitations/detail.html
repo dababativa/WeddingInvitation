@@ -7,9 +7,9 @@
     <h1 class="custom-section-titles pinyon-script-regular mt-3 mb-3 text-center banner-title">Laura & Daniel</h1>
     {% if invitation %}
     {% if invitation.expired and not invitation.confirmation %}
-    <h1 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Invitación Expirada</h1>
+    <h1 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Invitación expirada</h1>
     <h2 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Parece que has ingresado una
-        invitación expirada</h2>
+        invitación expirada.</h2>
     <span class=" d-flex justify-content-center">
         <a href="{% url 'index' %}" class="btn btn-primary">REGRESAR</a>
     </span>
@@ -45,13 +45,13 @@
                 <div class="col-6">
                     <img src="{% static 'images/formaldress.svg' %}" alt="Vestido" height="70px">
                     <p>Ellas</p>
-                    <p>Vestido largo de <strong>un solo</strong> tono</p>
+                    <p>Vestido largo de <strong>un solo</strong> tono.</p>
 
                 </div>
                 <div class="col-6">
                     <img src="{% static 'images/tuxedo.svg' %}" alt="Traje" height="75px">
                     <p>Ellos</p>
-                    <p>Traje negro <strong>tipo esmoquin</strong> con corbatín</p>
+                    <p>Traje negro <strong>tipo esmoquin</strong> con corbatín.</p>
                 </div>
             </div>
 
@@ -64,7 +64,7 @@
             </div>
             <h1 class="custom-section-titles cinzel-regular mt-1">Regalos</h1>
             <p>Tu presencia en este día tan especial para nosotros es el mejor regalo. Sin embargo, si quieres
-                obsequiarnos algo más, estaremos recibiendo regalos en forma de lluvia de sobres</p>
+                obsequiarnos algo más, estaremos recibiendo regalos en forma de lluvia de sobres.</p>
             <img src="{% static 'images/envelope.svg' %}" alt="Regalos" class="mb-5">
             <h1 class="custom-section-titles cinzel-regular mt-1 mb-2">Confirma tu asistencia</h1>
             {% if invitation.confirmation %}
@@ -103,9 +103,9 @@
     </div>
     {% endif %}
     {% else %}
-    <h1 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Invitación Inválida</h1>
+    <h1 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Invitación inválida</h1>
     <h2 class="cormorant-garamond-regular custom-section-titles pb-1 text-center">Parece que has ingresado una
-        invitación inválida
+        invitación inválida.
     </h2>
     <span class=" d-flex justify-content-center">
         <a href="{% url 'index' %}" class="btn btn-primary">REGRESAR</a>
