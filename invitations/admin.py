@@ -66,9 +66,6 @@ class ConfirmationAdmin(ImportExportModelAdmin):
     def has_add_permission(self, *args, **kwargs) -> bool:
         return False
 
-    def has_delete_permission(self, *args, **kwargs) -> bool:
-        return False
-
     def has_food_restrictions(self, obj):
         return "Si" if bool(obj.food_restrictions) else "No"
 

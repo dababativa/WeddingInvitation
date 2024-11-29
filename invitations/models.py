@@ -18,7 +18,7 @@ class Invitation(models.Model):
     is_honorary_invitation = models.BooleanField("Invitación honorífica", default=False)
     confirmation = models.OneToOneField(
         "Confirmation",
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL,
         null=True,
         blank=True,
         verbose_name="Confirmación",
