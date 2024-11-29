@@ -82,7 +82,8 @@
                     <input class="cormorant-garamond-regular mb-3" type="checkbox" name="will_attend" id="will_attend">
                     <br>
                     <label class="cormorant-garamond-regular mb-1" for="amount">Cupos confirmados</label> <br>
-                    <input class="cormorant-garamond-regular mb-3" type="number" name="amount" id="amount" min="0"
+                    <input required class="cormorant-garamond-regular mb-3" type="number" name="amount" id="amount"
+                        oninput="this.min = document.getElementById('will_attend').checked ? 1 : 0"
                         max="{{ invitation.amount }}"> <br>
                     <label class="cormorant-garamond-regular mb-1" for="food_restrictions">Restricciones
                         alimenticias</label><br>
