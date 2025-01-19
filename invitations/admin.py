@@ -1,11 +1,9 @@
 from django.contrib import admin
-from django.http import HttpRequest
 from .models import Invitation, Confirmation
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources, fields
-from import_export.widgets import ForeignKeyWidget
 from .models import Confirmation, Invitation
-from datetime import date
+from datetime import date, timedelta, datetime
 
 # Register your models here.
 
@@ -48,7 +46,17 @@ class InvitationAdmin(ImportExportModelAdmin):
     list_filter = ["is_honorary_invitation", ExpiredFilter]
 
     def expired(self, obj):
-        return obj.expiration_date < date.today()
+        utc_expiration_date = datetime.combine(
+            obj.expiration_date, datetime.min.time()
+        ) + timedelta(hours=5)
+        print(
+            "Expiration date: ",
+            utc_expiration_date,
+            "-",
+            "Current time: ",
+            datetime.today(),
+        )
+        return utc_expiration_date < datetime.today()
 
     expired.boolean = True
 

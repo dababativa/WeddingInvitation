@@ -1,6 +1,6 @@
 from django.db import models
 from uuid import uuid4
-from datetime import date
+from datetime import date, timedelta, datetime
 
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -26,7 +26,10 @@ class Invitation(models.Model):
     )
 
     def expired(self) -> bool:
-        return self.expiration_date < date.today()
+        utc_expiration_date = datetime.combine(
+            self.expiration_date, datetime.min.time()
+        ) + timedelta(hours=5)
+        return utc_expiration_date < date.today()
 
     def __str__(self) -> str:
         return f"{self.name} ({self.amount})"
