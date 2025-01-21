@@ -26,10 +26,7 @@ class Invitation(models.Model):
     )
 
     def expired(self) -> bool:
-        utc_expiration_date = datetime.combine(
-            self.expiration_date, datetime.min.time()
-        ) + timedelta(hours=5)
-        return utc_expiration_date < date.today()
+        return self.expiration_date < date.today()
 
     def __str__(self) -> str:
         return f"{self.name} ({self.amount})"
